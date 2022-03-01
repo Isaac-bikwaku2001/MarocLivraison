@@ -1,0 +1,65 @@
+﻿@model MarocLivraison.Models.Tournees
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tournees</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ChauffeurID" class="control-label"></label>
+                <select asp-for="ChauffeurID" class ="form-control" asp-items="ViewBag.ChauffeurID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiculeID" class="control-label"></label>
+                <select asp-for="VehiculeID" class ="form-control" asp-items="ViewBag.VehiculeID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientID" class="control-label"></label>
+                <select asp-for="ClientID" class ="form-control" asp-items="ViewBag.ClientID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateLivraison" class="control-label"></label>
+                <input asp-for="DateLivraison" class="form-control" />
+                <span asp-validation-for="DateLivraison" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilometrage" class="control-label"></label>
+                <input asp-for="Kilometrage" class="form-control" />
+                <span asp-validation-for="Kilometrage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NiveauCarburant" class="control-label"></label>
+                <input asp-for="NiveauCarburant" class="form-control" />
+                <span asp-validation-for="NiveauCarburant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdresseLivraison" class="control-label"></label>
+                <input asp-for="AdresseLivraison" class="form-control" />
+                <span asp-validation-for="AdresseLivraison" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DureeLivraison" class="control-label"></label>
+                <input asp-for="DureeLivraison" class="form-control" />
+                <span asp-validation-for="DureeLivraison" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
